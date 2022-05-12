@@ -10,10 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_12_195356) do
+ActiveRecord::Schema.define(version: 2022_05_12_211642) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "resorts", force: :cascade do |t|
+    t.string "name"
+    t.string "location"
+    t.boolean "is_open"
+    t.integer "base_elevation"
+    t.integer "summit_elevation"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "runs", force: :cascade do |t|
     t.string "name"
@@ -24,6 +34,9 @@ ActiveRecord::Schema.define(version: 2022_05_12_195356) do
     t.integer "vertical_feet"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "resort_id"
+    t.index ["resort_id"], name: "index_runs_on_resort_id"
   end
 
+  add_foreign_key "runs", "resorts"
 end

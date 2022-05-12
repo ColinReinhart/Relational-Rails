@@ -1,0 +1,6 @@
+<h1>Ski Runs</h1>
+<% @runs.each do |run| %>
+  <h3><%= run.name %></h3>
+  <p>Difficulty: <%= run.difficulty %></p>
+  <p>Vertical Feet: <%= run.vertical_feet %></p>
+<% end %>

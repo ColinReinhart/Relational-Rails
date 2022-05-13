@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+get '/', to: 'welcome#index'
+get '/runs', to: 'runs#index'
+get '/runs/:id', to: 'runs#show'
+get '/resorts/:resort_id/runs', to: 'resort_runs#index'
 end

@@ -29,4 +29,15 @@ RSpec.describe 'Resort runs index' do
 
     expect(page).to have_content("Average run vertical feet at Telluride: 2031.33")
   end
+
+  # User Story 8, Child Index Link
+  #
+  # As a visitor
+  # When I visit any page on the site
+  # Then I see a link at the top of the page that takes me to the Child Index
+  it "has link to Runs Index" do
+    visit "/resorts/#{@telluride.id}/runs"
+
+    expect(page).to have_link("/runs")
+  end
 end

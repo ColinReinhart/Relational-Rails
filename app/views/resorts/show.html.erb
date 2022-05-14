@@ -1,5 +1,6 @@
 <a href='/runs'> All Runs </a> &nbsp;
-<a href='/resorts'> All Resorts </a>
+<a href='/resorts'> All Resorts </a> &nbsp;
+<a href="/resorts/<%=@resort.id%>/runs"> All Runs at <%= @resort.name %></a>
 <br>
 <h1><%= @resort.name %></h1>
 <p>Location: <%= @resort.location %></p>

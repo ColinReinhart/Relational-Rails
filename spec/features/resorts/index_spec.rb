@@ -20,7 +20,7 @@ RSpec.describe 'Resort runs index' do
 
     visit "/resorts"
 
-    expect("Telluride").to appear_before("Breckenridge")
+    expect("Breckenridge").to appear_before("Telluride")
 
     whistler = Resort.create!(name: "Whistler", location: "British Colombia", is_open: true, base_elevation: 2182, summit_elevation: 7160)
 

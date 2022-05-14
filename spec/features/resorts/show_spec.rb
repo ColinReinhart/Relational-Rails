@@ -19,4 +19,8 @@ RSpec.describe 'Resort runs index' do
     expect(page).to have_content(@telluride.summit_elevation)
   end
 
+  it "shows the created_at" do
+    visit '/resorts'
+    expect(page).to have_content(@telluride.created_at)
+  end
 end

@@ -37,4 +37,11 @@ RSpec.describe 'Resort runs index' do
     expect(current_path).to eq('/runs')
   end
 
+  it "has link to Runs Index" do
+    visit "/resorts"
+
+    expect(page).to have_link('All Reosrts', href: '/resorts')
+    click_link('All Resorts')
+    expect(current_path).to eq('/resorts')
+  end
 end

@@ -52,5 +52,7 @@ RSpec.describe 'Resort runs index' do
   it "has a link 'New Parent'" do
     visit "/resorts"
     expect(page).to have_link("New Resort", href: '/resorts/new')
+    # click_link('New Resort')
+    # expect(current_path).to eq('/resorts/new')
   end
 end

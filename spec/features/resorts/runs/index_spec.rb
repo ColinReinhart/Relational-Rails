@@ -47,10 +47,10 @@ RSpec.describe 'Resort runs index' do
 # As a visitor
 # When I visit any page on the site
 # Then I see a link at the top of the page that takes me to the Parent Index
-  it "has link to Runs Index" do
+  it "has link to Resorts Index" do
     visit "/resorts/#{@telluride.id}/runs"
 
-    expect(page).to have_link('All Reosrts', href: '/resorts')
+    expect(page).to have_link('All Resorts', href: '/resorts')
     click_link('All Resorts')
     expect(current_path).to eq('/resorts')
   end

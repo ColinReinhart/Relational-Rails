@@ -10,7 +10,7 @@ RSpec.describe 'the runs show page' do
   end
 
   it "shows run name" do
-    visit "runs/#{@see.id}"
+    visit "/runs/#{@see.id}"
 
     expect(page).to have_content(@see.name)
     expect(page).to_not have_content(@bushwhack.name)
@@ -18,23 +18,23 @@ RSpec.describe 'the runs show page' do
   end
 
   it "displays the resort name" do
-    visit "runs/#{@see.id}"
+    visit "/runs/#{@see.id}"
 
     expect(page).to have_content(@telluride.name)
   end
 
   it "has link to Runs Index" do
-    visit "runs/#{@see.id}"
+    visit "/runs/#{@see.id}"
 
     expect(page).to have_link('All Runs', href: '/runs')
     click_link('All Runs')
     expect(current_path).to eq('/runs')
   end
 
-  it "has link to Runs Index" do
-    visit "runs/#{@see.id}"
+  it "has link to Resorts Index" do
+    visit "/runs/#{@spiral.id}"
 
-    expect(page).to have_link('All Reosrts', href: '/resorts')
+    expect(page).to have_link('All Rosorts', href: '/resorts')
     click_link('All Resorts')
     expect(current_path).to eq('/resorts')
   end

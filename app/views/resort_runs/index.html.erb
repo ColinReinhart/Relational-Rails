@@ -1,7 +1,7 @@
-
-
+<a href='/runs'> All Runs </a>
+<br>
 <% @runs.each do |run| %>
-<%= link_to run.name, "/runs/#{run.id}" %>
+<h1> <%= link_to run.name, "/runs/#{run.id}" %> </h1>
 <p> Difficulty: <%= run.difficulty %></p>
 <p> Vertical Feet: <%= run.vertical_feet%></p>
 <p>Is open?: <%= run.is_open %></p>

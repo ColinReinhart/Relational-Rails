@@ -33,4 +33,12 @@ RSpec.describe 'Resort runs index' do
 
     expect(page).to have_content("Number of runs at Telluride = 3")
   end
+
+  it "has link to Runs Index" do
+    visit "/resorts/#{@telluride.id}"
+
+    expect(page).to have_link('All Runs', href: '/runs')
+    click_link('All Runs')
+    expect(current_path).to eq('/runs')
+  end
 end

@@ -27,7 +27,14 @@ RSpec.describe 'Resort runs index' do
     visit "/resorts"
 
     expect("Whistler").to appear_before("Breckenridge")
+  end
 
+  it "has link to Runs Index" do
+    visit "/resorts"
+
+    expect(page).to have_link('All Runs', href: '/runs')
+    click_link('All Runs')
+    expect(current_path).to eq('/runs')
   end
 
 end

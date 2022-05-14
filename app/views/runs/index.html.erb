@@ -1,6 +1,13 @@
+<a href='/runs'> All Runs </a> &nbsp;
+<a href='/resorts'> All Resorts </a>
+<br>
 <h1>Ski Runs</h1>
 <% @runs.each do |run| %>
   <h3><%= run.name %></h3>
   <p>Difficulty: <%= run.difficulty %></p>
   <p>Vertical Feet: <%= run.vertical_feet %></p>
+  <p>Is open?: <%= run.is_open %></p>
+  <p>Has moguls?: <%= run.has_moguls %></p>
+  <p>Is Above Timberline <%= run.above_timberline %></p>
+
 <% end %>

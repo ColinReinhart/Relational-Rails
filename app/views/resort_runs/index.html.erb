@@ -1,6 +1,15 @@
+<a href='/runs'> All Runs </a> &nbsp;
+<a href='/resorts'> All Resorts </a>
+<br>
 <% @runs.each do |run| %>
-<%= link_to run.name, "/runs/#{run.id}" %>
+<h1> <%= link_to run.name, "/runs/#{run.id}" %> </h1>
 <p> Difficulty: <%= run.difficulty %></p>
 <p> Vertical Feet: <%= run.vertical_feet%></p>
+<p>Is open?: <%= run.is_open %></p>
+<p>Has moguls?: <%= run.has_moguls %></p>
+<p>Is Above Timberline <%= run.above_timberline %></p>
+
+
+
 <% end %>
 <p> Average run vertical feet at <%= @resort.name %>: <%= @resort.average_run_length %></p>

@@ -20,7 +20,7 @@ RSpec.describe 'Resort runs index' do
   end
 
   it "shows the created_at" do
-    visit '/resorts'
+    visit "/resorts"
     expect(page).to have_content(@telluride.created_at)
   end
 

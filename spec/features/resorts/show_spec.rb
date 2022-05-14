@@ -23,4 +23,14 @@ RSpec.describe 'Resort runs index' do
     visit '/resorts'
     expect(page).to have_content(@telluride.created_at)
   end
+
+# As a visitor
+# When I visit a parent's show page
+# I see a count of the number of children associated with this parent
+
+  it "shows the count of runs at a resort" do
+    visit "/resorts/#{@telluride.id}"
+
+    expect(page).to have_content("Number of runs at Telluride = 3")
+  end
 end

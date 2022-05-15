@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpes.describe 'new resort page' do
+RSpec.describe 'new resort page' do
   it "can create a new resort" do
     visit '/resorts/new'
 
@@ -13,8 +13,12 @@ RSpes.describe 'new resort page' do
     click_button 'Create Resort'
 
     expect(page).to have_content("Test Resort")
-    expect(page).to have_content("Test Location")
-    expect(page).to have_content("Base Elevation: 1234")
-    expect(page).to have_content("Summit Elevation: 2345")
+    expect(current_path).to eq('/resorts')
+    test = Resort.last
+    expect(test.name).to eq("Test Resort")
+    expect(test.location).to eq("Test Location")
+    expect(test.is_open).to eq(true)
+    expect(test.base_elevation).to eq(1234)
+    expect(test.summit_elevation).to eq(2345)
   end
 end

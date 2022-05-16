@@ -16,7 +16,7 @@ class ResortsController < ApplicationController
   end
 
   def edit
-    @resort_id = params[:id]
+    @resort = Resort.find(params[:id])
   end
 
   def update

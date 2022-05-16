@@ -8,7 +8,6 @@ class ResortsController < ApplicationController
   end
 
   def new
-
   end
 
   def create
@@ -21,5 +20,22 @@ class ResortsController < ApplicationController
       })
       resort.save
       redirect_to '/resorts'
+  end
+
+  def edit
+    @resort = Resort.find(params[:id])
+  end
+
+  def update
+    resort = Resort.find(params[:id])
+    resort.update({
+      name: params[:resort][:name],
+      location: params[:resort][:location],
+      is_open: params[:resort][:is_open],
+      base_elevation: params[:resort][:base_elevation],
+      summit_elevation: params[:resort][:summit_elevation]
+      })
+      resort.save
+      redirect_to "/resorts/#{resort.id}"
   end
 end

@@ -1,0 +1,19 @@
+<a href='/runs'> All Runs </a> &nbsp;
+<a href='/resorts'> All Resorts </a>
+<br>
+<form action="/resorts/<%= @resort.id %>}" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="hidden" name="_method" value="PATCH" >
+  <h1>Edit <%= @resort.name %></h1>
+  <h2>What is the name of the resort?</h2>
+  <input type="text" name="resort[name]" value="<%= @resort.name %>"><br>
+  <h2>Where is the resort located(State/Province)?</h2>
+  <input type="text" name="resort[location]" value="<%= @resort.location %>"><br>
+  <h2>Is the resort currently open(true or false)?</h2>
+  <input type="text" name="resort[is_open]" value="<%= @resort.is_open %>"><br>
+  <h2>What is the base elevation(in feet)?</h2>
+  <input type="text" name="resort[base_elevation]" value="<%= @resort.base_elevation %>"><br>
+  <h2>What is the summit elevation(in feet)?</h2>
+  <input type="text" name="resort[summit_elevation]" value="<%= @resort.summit_elevation %>"><br>
+  <input type="submit" value="Update Resort">
+</form>

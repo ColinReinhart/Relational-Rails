@@ -31,11 +31,11 @@ RSpec.describe 'the runs show page' do
     expect(current_path).to eq('/runs')
   end
 
-  it "has link to Resorts Index" do
-    visit "/runs/#{@spiral.id}"
-
-    expect(page).to have_link('All Rosorts', href: '/resorts')
+  it "has link to Resort Index" do
+    visit "runs/#{@see.id}"
+    expect(page).to have_link("All Resorts", href: '/resorts')
     click_link('All Resorts')
-    expect(current_path).to eq('/resorts')
+    expect(current_path).to eq("/resorts")
   end
+
 end

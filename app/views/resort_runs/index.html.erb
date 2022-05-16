@@ -8,8 +8,6 @@
 <p>Is open?: <%= run.is_open %></p>
 <p>Has moguls?: <%= run.has_moguls %></p>
 <p>Is Above Timberline <%= run.above_timberline %></p>
-
-
-
 <% end %>
 <p> Average run vertical feet at <%= @resort.name %>: <%= @resort.average_run_length %></p>
+<a href="resorts/<%= @resort.id %>/runs/new"> Create Run </a>

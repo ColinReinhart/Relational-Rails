@@ -1,18 +1,15 @@
-<a href='/runs'> All Runs </a> &nbsp;
-<a href='/resorts'> All Resorts </a>
-<br>
-<h1>Create A New Resort</h1>
-<form action="/resorts" method="post">
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-  <h2>What is the name of the resort?</h2>
-  <input type="text" name="resort[name]"><br>
-  <h2>Where is the resort located(State/Province)?</h2>
-  <input type="text" name="resort[location]"><br>
-  <h2>Is the resort currently open(true or false)?</h2>
-  <input type="text" name="resort[is_open]"><br>
-  <h2>What is the base elevation(in feet)?</h2>
-  <input type="text" name="resort[base_elevation]"><br>
-  <h2>What is the summit elevation(in feet)?</h2>
-  <input type="text" name="resort[summit_elevation]"><br>
-  <input type="submit" value="Create Resort">
-</form>
+<h1>Create a New Resort</h1>
+<%= form_with url: "/resorts", method: :post, local: true do |form|%>
+  <%= form.label :name %><br>
+  <%= form.text_field :name %><br>
+  <%= form.label :location %><br>
+  <%= form.text_field :location %><br>
+  <%= form.label "Is the Resort Currently open? (True/False)" %><br>
+  <%= form.text_field :is_open %><br>
+  <%= form.label :base_elevation %><br>
+  <%= form.text_field :base_elevation %><br>
+  <%= form.label :summit_elevation %><br>
+  <%= form.text_field :summit_elevation %><br><br>
+  <%= form.submit "Create Resort" %>
+
+  <% end %>

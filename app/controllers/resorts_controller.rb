@@ -11,31 +11,22 @@ class ResortsController < ApplicationController
   end
 
   def create
-    resort = Resort.new ({
-      name: params[:resort][:name],
-      location: params[:resort][:location],
-      is_open: params[:resort][:is_open],
-      base_elevation: params[:resort][:base_elevation],
-      summit_elevation: params[:resort][:summit_elevation]
-      })
-      resort.save
-      redirect_to '/resorts'
+    Resort.create(resort_params)
+    redirect_to '/resorts'
   end
 
   def edit
-    @resort = Resort.find(params[:id])
+    @resort_id = params[:id]
   end
 
   def update
     resort = Resort.find(params[:id])
-    resort.update({
-      name: params[:resort][:name],
-      location: params[:resort][:location],
-      is_open: params[:resort][:is_open],
-      base_elevation: params[:resort][:base_elevation],
-      summit_elevation: params[:resort][:summit_elevation]
-      })
-      resort.save
-      redirect_to "/resorts/#{resort.id}"
+    resort.update(resort_params)
+    redirect_to "/resorts/#{resort.id}"
   end
+
+  private
+    def resort_params
+      params.permit(:name, :location, :is_open, :base_elevation, :summit_elevation)
+    end
 end

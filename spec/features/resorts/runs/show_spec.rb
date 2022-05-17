@@ -19,9 +19,4 @@ RSpec.describe 'Resort runs show' do
     expect(page).to_not have_content("Blue")
   end
 
-  it "has a link to create a new run" do
-    visit "resorts/#{@telluride.id}/runs"
-
-    expect(page).to have_link("Create Run", href: "resorts/#{@telluride.id}/runs/new")
-  end
 end

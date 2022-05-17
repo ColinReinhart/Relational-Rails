@@ -1,0 +1,18 @@
+<h1>Create a New Run</h1>
+<%= form_with url: "/resorts/#{@resort.id}/runs", method: :post, local: true do |form|%>
+<h1>Adding Run To <%= @resort.name %></h1>
+  <%= form.label :name %><br>
+  <%= form.text_field :name %><br>
+  <%= form.label "Is the Run Currently open? (True/False)" %><br>
+  <%= form.text_field :is_open %><br>
+  <%= form.label "Does the run have moguls?(true/false)" %><br>
+  <%= form.text_field :has_moguls %><br>
+  <%= form.label "Is the run above timberline?(true/false)" %><br>
+  <%= form.text_field :above_timberline %><br>
+  <%= form.label :difficulty %><br>
+  <%= form.text_field :difficulty %><br>
+  <%= form.label :vertical_feet %><br>
+  <%= form.text_field :vertical_feet %><br><br>
+  <%= form.submit "Create Run" %>
+
+  <% end %>

@@ -11,7 +11,8 @@ class ResortsController < ApplicationController
   end
 
   def create
-    Resort.create(resort_params)
+    new_resort = Resort.create(resort_params)
+    new_resort.save
     redirect_to '/resorts'
   end
 
@@ -22,7 +23,8 @@ class ResortsController < ApplicationController
   def update
     resort = Resort.find(params[:id])
     resort.update(resort_params)
-    redirect_to "/resorts/#{resort.id}"
+    resort.save
+    redirect_to "/resorts/#{params[:id]}"
   end
 
   private

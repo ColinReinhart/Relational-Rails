@@ -9,5 +9,6 @@
 <p>Has moguls?: <%= run.has_moguls %></p>
 <p>Is Above Timberline <%= run.above_timberline %></p>
 <% end %>
-<p> Average run vertical feet at <%= @resort.name %>: <%= @resort.average_run_length %></p>
-<a href="resorts/<%= @resort.id %>/runs/new"> Create Run </a>
+<%= link_to "Create Run", "/resorts/#{@resort.id}/runs/new" %>
+<br><br>
+<h3> Average run vertical feet at <%= @resort.name %>: <%= @resort.average_run_length %></h3>

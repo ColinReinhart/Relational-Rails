@@ -13,5 +13,15 @@ RSpec.describe Run, type: :model do
     expect(Run.is_open).to eq([@spiral, @bush])
   end
 
+  it "sorts runs alphabetically by name" do
+    visit "/resorts/#{@telluride.id}/runs"
+
+    expext(@priral.name).to appear_before(@bush.name)
+
+    click_link("Sort Alphabetically")
+
+    expect(@bush.name).to appear_before(@see.name)
+    expect(@see.name).to appear_before(@Spiral.name)
+  end
 
 end

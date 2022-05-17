@@ -11,4 +11,6 @@
 <% end %>
 <%= link_to "Create Run", "/resorts/#{@resort.id}/runs/new" %>
 <br><br>
+<%= link_to "Sort Alphabetically", "/resorts/#{@resort.id}/runs" %>
+<br><br>
 <h3> Average run vertical feet at <%= @resort.name %>: <%= @resort.average_run_length %></h3>

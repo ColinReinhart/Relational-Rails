@@ -1,0 +1,15 @@
+<h1>Create a New Resort</h1>
+<%= form_with url: "/resorts", method: :post, local: true do |form|%>
+  <%= form.label :name %><br>
+  <%= form.text_field :name %><br>
+  <%= form.label :location %><br>
+  <%= form.text_field :location %><br>
+  <%= form.label "Is the Resort Currently open? (True/False)" %><br>
+  <%= form.text_field :is_open %><br>
+  <%= form.label :base_elevation %><br>
+  <%= form.text_field :base_elevation %><br>
+  <%= form.label :summit_elevation %><br>
+  <%= form.text_field :summit_elevation %><br><br>
+  <%= form.submit "Create Resort" %>
+
+  <% end %>

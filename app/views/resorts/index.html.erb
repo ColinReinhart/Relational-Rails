@@ -3,5 +3,7 @@
 <br>
 <h1>Ski Resorts</h1>
 <% @resorts.each do |resort| %>
-  <h3><%= resort.name %> <span style="font-size: 12px">(Created at: <%= resort.created_at %>) </span></h3>
+  <h3>ID: <%= resort.id %> <%= resort.name %> <span style="font-size: 12px">(Created at: <%= resort.created_at %>) </span></h3>
 <% end %>
+
+<a href='/resorts/new'> New Resort </a>

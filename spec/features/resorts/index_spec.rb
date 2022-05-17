@@ -44,4 +44,15 @@ RSpec.describe 'Resort runs index' do
     click_link('All Resorts')
     expect(current_path).to eq('/resorts')
   end
+# User Story 11, Parent Creation
+#
+# As a visitor
+# When I visit the Parent Index page
+# Then I see a link to create a new Parent record, "New Parent"
+  it "has a link 'New Parent'" do
+    visit "/resorts"
+    expect(page).to have_link("New Resort", href: '/resorts/new')
+    # click_link('New Resort')
+    # expect(current_path).to eq('/resorts/new')
+  end
 end

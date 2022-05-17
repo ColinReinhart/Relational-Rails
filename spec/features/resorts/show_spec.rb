@@ -64,9 +64,14 @@ RSpec.describe 'Resort runs index' do
 
   it "has a link to Update Resort page" do
     visit "/resorts/#{@telluride.id}"
-    
+
     expect(page).to have_link('Update Resort', href: "/resorts/#{@telluride.id}/edit")
     click_link('Update Resort')
     expect(current_path).to eq("/resorts/#{@telluride.id}/edit")
+  end
+
+  it "has link to delete each resort" do
+    visit "/resorts/#{@telluride.id}"
+    expect(page).to have_link("Deleye Run", href: "/resorts/#{@telluride.id}/delete")
   end
 end

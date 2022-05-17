@@ -37,4 +37,11 @@ RSpec.describe 'the runs show page' do
     expect(current_path).to eq("/resorts")
   end
 
+  it "has a link to runs edit page" do
+    visit "runs/#{@see.id}"
+    expect(page).to have_link("Update Run", href: "/runs/#{@see.id}/edit")
+    click_link("Update Run")
+    expect(current_path).to eq("/runs/#{@see.id}/edit")
+  end
+
 end

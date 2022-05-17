@@ -1,0 +1,17 @@
+<h1> Edit Runs </h1>
+<%= form_with url: "/runs/#{@run.id}", method: :patch, local: true do |form| %>
+  <%= form.label :name %><br>
+  <%= form.text_field :name %><br>
+  <%= form.label "Is the run currently open?(true/false)" %><br>
+  <%= form.text_field :is_open %><br>
+  <%= form.label "Does the run have moguls? (True/False)" %><br>
+  <%= form.text_field :has_moguls %><br>
+  <%= form.label "Is the run above timberline" %><br>
+  <%= form.text_field :above_timberline %><br>
+  <%= form.label :difficulty %><br>
+  <%= form.text_field :difficulty %><br><br>
+  <%= form.label :vertical_feet %><br>
+  <%= form.text_field :vertical_feet %><br><br>
+  <%= form.submit "Update Run" %>
+
+  <% end %>

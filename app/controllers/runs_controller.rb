@@ -1,6 +1,6 @@
 class RunsController < ApplicationController
   def index
-    @runs = Run.all
+    @runs = Run.is_open
   end
 
   def show

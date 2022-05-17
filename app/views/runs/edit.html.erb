@@ -1,4 +1,4 @@
-<h1> Edit Runs </h1>
+<h1> Edit <%= @run.name %> </h1>
 <%= form_with url: "/runs/#{@run.id}", method: :patch, local: true do |form| %>
   <%= form.label :name %><br>
   <%= form.text_field :name %><br>

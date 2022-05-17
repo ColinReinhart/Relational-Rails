@@ -14,14 +14,7 @@ RSpec.describe Run, type: :model do
   end
 
   it "sorts runs alphabetically by name" do
-    visit "/resorts/#{@telluride.id}/runs"
-
-    expext(@priral.name).to appear_before(@bush.name)
-
-    click_link("Sort Alphabetically")
-
-    expect(@bush.name).to appear_before(@see.name)
-    expect(@see.name).to appear_before(@Spiral.name)
+    expect(@telluride.runs.site_order("Alphabetical").to_a).to eq([@bush, @see, @sprial])
   end
 
 end

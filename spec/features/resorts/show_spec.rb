@@ -72,6 +72,8 @@ RSpec.describe 'Resort runs index' do
 
   it "has link to delete each resort" do
     visit "/resorts/#{@telluride.id}"
-    expect(page).to have_link("Deleye Run", href: "/resorts/#{@telluride.id}/delete")
+    expect(page).to have_link("Delete Resort")
+    click_link "Delete Resort"
+    expect(page).to_not have_content("Telluride")
   end
 end

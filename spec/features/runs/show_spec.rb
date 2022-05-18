@@ -16,7 +16,7 @@ RSpec.describe 'the runs show page' do
 
   end
 
-  it "displays the resort name" do
+  it "shows the resort name" do
     visit "/runs/#{@see.id}"
 
     expect(page).to have_content(@telluride.name)

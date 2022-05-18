@@ -1,7 +1,6 @@
 class ResortRunsController < ApplicationController
   def index
-    @resort = Resort.find(params[:resort_id])
-    @runs = @resort.runs.site_order(params[:sort])
+    @resort = Resort.find(params[:id])
   end
 
   def new

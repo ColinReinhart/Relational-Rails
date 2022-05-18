@@ -16,7 +16,7 @@ RSpec.describe 'the runs show page' do
 
   end
 
-  it "displays the resort name" do
+  it "shows the resort name" do
     visit "/runs/#{@see.id}"
 
     expect(page).to have_content(@telluride.name)
@@ -51,4 +51,10 @@ RSpec.describe 'the runs show page' do
     expect(page).to_not have_content("See Forever")
   end
 
+  it "has link to delete each run" do
+    visit "/runs/#{@spiral.id}"
+    expect(page).to have_link("Delete Run")
+    click_link "Delete Run"
+    expect(page).to_not have_content("Spiral Stairs")
+  end
 end

@@ -1,7 +1,7 @@
 <a href='/runs'> All Runs </a> &nbsp;
 <a href='/resorts'> All Resorts </a>
 <br>
-<% @runs.each do |run| %>
+<% @resort.runs.site_order(params[:sort], params[:search_number]).each do |run| %>
 <h1> <%= link_to run.name, "/runs/#{run.id}" %> </h1>
 <p> Difficulty: <%= run.difficulty %></p>
 <p> Vertical Feet: <%= run.vertical_feet%></p>
@@ -13,5 +13,12 @@
 <%= link_to "Create Run", "/resorts/#{@resort.id}/runs/new" %>
 <br><br>
 <%= link_to "Sort Alphabetically", "/resorts/#{@resort.id}/runs/?sort=Alphabetical" %>
+<br><br>
+<%= form_with url: "/resorts/#{@resort.id}/runs", method: :get, local: true do |form| %>
+  <%= form.hidden_field :sort, value: "Filter" %>
+  <%= form.label "View runs longer than:" %>
+  <%= form.text_field :search_number %>
+  <%= form.submit "Submit" %>
+<% end %>
 <br><br>
 <h3> Average run vertical feet at <%= @resort.name %>: <%= @resort.average_run_length %></h3>

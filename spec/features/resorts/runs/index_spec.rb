@@ -65,4 +65,19 @@ RSpec.describe 'Resort runs index' do
       visit "/runs"
       expect(page).to have_link("Update Run", href: "/runs/#{@spiral.id}/edit")
     end
+
+    it "has form to to show only runs over a certian number of vertical fee" do
+      visit "resorts/#{@telluride.id}/runs"
+
+      expect(page).to have_content("Spiral Stairs")
+      expect(page).to have_content("Bushwhacker")
+      expect(page).to have_content("See Forever")
+
+      fill_in(:search_number, with: 1500)
+      click_button "Submit"
+
+      expect(page).to have_content("Spiral Stairs")
+      expect(page).to_not have_content("Bushwhacker")
+      expect(page).to have_content("See Forever")
+    end
 end

@@ -8,4 +8,5 @@ class Resort < ApplicationRecord
   def self.order_by_created_time
     order(created_at: :desc)
   end
+
 end

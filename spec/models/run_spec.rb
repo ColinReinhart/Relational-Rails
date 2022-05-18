@@ -13,8 +13,8 @@ RSpec.describe Run, type: :model do
     expect(Run.is_open).to eq([@spiral, @bush])
   end
 
-  xit "sorts runs alphabetically by name" do
-    expect(@telluride.runs.site_order("Alphabetical").to_a).to eq([@bush, @see, @sprial])
+  it "sorts runs alphabetically by name" do
+    expect(@telluride.runs.site_order("Alphabetical").to_a).to eq([@bush, @see, @spiral])
   end
 
 end

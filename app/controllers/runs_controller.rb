@@ -18,6 +18,12 @@ class RunsController < ApplicationController
     redirect_to "/runs/#{params[:id]}"
   end
 
+  def destroy
+    run = Run.find(params[:id])
+    run.destroy
+    redirect_to "/runs"
+  end
+
     private
       def run_params
         params.permit(:name, :is_open, :has_moguls, :above_timberline, :difficulty, :vertical_feet)

@@ -19,4 +19,9 @@ RSpec.describe 'Resort runs show' do
     expect(page).to_not have_content("Blue")
   end
 
+  it "can has link to sort alphabetically" do
+    visit "resorts/#{@telluride.id}/runs"
+
+    expect(page).to have_link("Sort Alphabetically")
+  end
 end

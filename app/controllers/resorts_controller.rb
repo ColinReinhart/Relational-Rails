@@ -27,6 +27,13 @@ class ResortsController < ApplicationController
     redirect_to "/resorts/#{params[:id]}"
   end
 
+  def destroy
+    resort = Resort.find(params[:id])
+    resort.runs.destroy_all
+    resort.destroy
+    redirect_to "/resorts"
+  end
+
   private
     def resort_params
       params.permit(:name, :location, :is_open, :base_elevation, :summit_elevation)

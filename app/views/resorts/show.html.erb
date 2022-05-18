@@ -9,3 +9,4 @@
 <p>Summit Elevation: <%= @resort.summit_elevation %></p>
 <p> Number of runs at <%= @resort.name %> = <%= @resort.runs.count %> </p>
 <a href="/resorts/<%=@resort.id%>/edit"> Update Resort </a>
+<p> <%= link_to "Delete Resort", "/resorts/#{@resort.id}", method: :delete %> </p>

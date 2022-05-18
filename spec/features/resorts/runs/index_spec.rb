@@ -60,4 +60,9 @@ RSpec.describe 'Resort runs index' do
 
       expect(page).to have_link("Create Run", href: "/resorts/#{@telluride.id}/runs/new")
     end
+
+    it "has link to edit each run" do
+      visit "/runs"
+      expect(page).to have_link("Update Run", href: "/runs/#{@spiral.id}/edit")
+    end
 end

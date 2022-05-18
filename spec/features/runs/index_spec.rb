@@ -33,4 +33,9 @@ RSpec.describe 'Runs runs index' do
     expect(current_path).to eq('/resorts')
   end
 
+  it "has link to edit each run" do
+    visit "/runs"
+    expect(page).to have_link("Update Run", href: "/runs/#{@spiral.id}/edit")
+  end
+
 end

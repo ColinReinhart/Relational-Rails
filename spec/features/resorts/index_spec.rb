@@ -9,7 +9,6 @@ RSpec.describe 'Resort runs index' do
   end
 
   it "shows all the resorts" do
-
     visit "/resorts"
 
     expect(page).to have_content(@telluride.name)
@@ -19,13 +18,11 @@ RSpec.describe 'Resort runs index' do
     breck = Resort.create!(name: "Breckenridge", location: "Colorado", is_open: true, base_elevation: 9600, summit_elevation: 12998)
 
     visit "/resorts"
-
     expect("Breckenridge").to appear_before("Telluride")
 
     whistler = Resort.create!(name: "Whistler", location: "British Colombia", is_open: true, base_elevation: 2182, summit_elevation: 7160)
 
     visit "/resorts"
-
     expect("Whistler").to appear_before("Breckenridge")
   end
 
@@ -44,15 +41,19 @@ RSpec.describe 'Resort runs index' do
     click_link('All Resorts')
     expect(current_path).to eq('/resorts')
   end
-# User Story 11, Parent Creation
-#
-# As a visitor
-# When I visit the Parent Index page
-# Then I see a link to create a new Parent record, "New Parent"
+
   it "has a link 'New Parent'" do
     visit "/resorts"
     expect(page).to have_link("New Resort", href: '/resorts/new')
-    # click_link('New Resort')
-    # expect(current_path).to eq('/resorts/new')
+    click_link('New Resort')
+    expect(current_path).to eq('/resorts/new')
+  end
+
+  it "has link to edit Resort" do
+    visit "/resorts"
+    expect(page).to have_link("Update Resort")
+
+    click_link("Update Resort")
+    expect(current_path).to eq("/resorts/#{@telluride.id}/edit")
   end
 end

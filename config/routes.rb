@@ -14,6 +14,8 @@ get '/resorts/:id/runs/new', to: 'resort_runs#new'
 get '/runs', to: 'runs#index'
 get '/runs/:id', to: 'runs#show'
 patch '/runs/:id', to: 'runs#update'
+delete '/runs/:id', to: 'runs#destroy'
+
 get '/runs/:id/edit', to: 'runs#edit'
 
 

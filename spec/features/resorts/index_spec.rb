@@ -62,7 +62,6 @@ RSpec.describe 'Resort runs index' do
     expect(page).to have_link("Delete Resort")
 
     click_link("Delete Resort")
-    expect(current_path).to eq("/resorts/#{@telluride.id}")
 
     expect(page).to_not have_content("Telluride")
   end

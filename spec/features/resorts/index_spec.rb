@@ -56,4 +56,5 @@ RSpec.describe 'Resort runs index' do
     click_link("Update Resort")
     expect(current_path).to eq("/resorts/#{@telluride.id}/edit")
   end
+
 end

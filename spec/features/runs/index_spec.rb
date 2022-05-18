@@ -38,4 +38,13 @@ RSpec.describe 'Runs runs index' do
     expect(page).to have_link("Update Run", href: "/runs/#{@spiral.id}/edit")
   end
 
+  iit "has link to delete run" do
+    visit "/runs"
+    expect(page).to have_link("Delete Run")
+
+    click_link("Delete Run")
+
+    expect(page).to_not have_content("Spiral Stairs")
+  end
+
 end
